@@ -49,6 +49,7 @@ public class HomeController {
 	public String processForm2(@Valid @ModelAttribute("loan") LoanApplicant loanApplicant , 
 			BindingResult theBindingResult)
 	{
+		
 		System.out.println(loanApplicant.getFirstName());
 		if(theBindingResult.hasErrors())
 		{

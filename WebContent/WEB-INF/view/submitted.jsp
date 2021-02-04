@@ -8,7 +8,7 @@
 </head>
 <body>
 
-${loan.firstName} ${loan.lastName } your application is submitted successfully.
+${loan.firstName} ${loan.lastName} your application is submitted successfully.
 
 
 

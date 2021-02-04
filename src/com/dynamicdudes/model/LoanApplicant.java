@@ -1,5 +1,7 @@
 package com.dynamicdudes.model;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -8,16 +10,14 @@ import javax.validation.constraints.Size;
 public class LoanApplicant {
 	
 	@NotNull(message="is Required")
-	@Size(min=1,message="min 1 character Required")
 	@Size(max=255,message="255 character limit")
 	private String firstName;
 	
 	
-	
+	@Size(max=255,message="255 character limit")
 	private String midName;
 	
 	@NotNull(message="is Required")
-	@Size(min=1,message="min 1 character Required")
 	@Size(max=255,message="255 character limit")
 	private String lastName;
 	
@@ -25,7 +25,6 @@ public class LoanApplicant {
 	 
 	
 	@NotNull(message="is Required")
-	
 	private String dob;
 	
 	@NotNull(message="is Required")
@@ -39,29 +38,29 @@ public class LoanApplicant {
 	private String desc;
 	
 	@NotNull(message="is Required")
-	@Size(min=1,message="min 1 character Required")
 	@Size(max=255,message="255 character limit")
 	private String addrOne;
 	
-	
+	@Size(max=255,message="255 character limit")
 	private String addrTwo;
 	
 	@NotNull(message="is Required")
-	@Size(min=1,message="min 1 character Required")
 	@Size(max=255,message="255 character limit")
 	private String city;
 	
 	@NotNull(message="is Required")
-	@Size(min=1,message="min 1 character Required")
 	@Size(max=255,message="255 character limit")
 	private String state;
 	
 	
 	@NotNull(message="is Required")
+	@Size(max=255,message="255 character limit")
+	@Pattern(regexp="^(.+)@(.+)$", message="enter valid email")
 	private String email;
 	
 	
 	@NotNull(message="is Required")
+	@Size(max=255,message="255 character limit")
 	private String employeeName;
 	
 	
@@ -70,55 +69,75 @@ public class LoanApplicant {
 	
 	
 	@NotNull(message="is Required")
+	@Size(max=255,message="255 character limit")
 	private String employeeAddressOne; 
 	
+	@Size(max=255,message="255 character limit")
 	private String employeeAddressTwo;
 	
 	
 	@NotNull(message="is Required")
+	@Size(max=255,message="255 character limit")
 	private String employeeCity;
 	
 	
 	@NotNull(message="is Required")
+	@Size(max=255,message="255 character limit")
 	private String employeeState;
 	
 	
 	@NotNull(message="is Required")
+	@Min(0)
 	private Long ssnNumber;
 	
 	
 	@NotNull(message="is Required")
+	@Min(1000000000L)
+	@Digits(integer = 10,fraction = 0,message="must valid office Phone of 10 digit")
 	private Long homePhone; 
 	
 	
-	
+	@Min(1000000000L)
+	@Digits(integer = 10,fraction = 0,message="must valid mobile of 10 digit")
 	private Long officePhone;
 	
 	@NotNull(message="is Required")
+	@Min(1000000000L)
+	@Digits(integer = 10,fraction = 0,message="must valid mobile of 10 digit")
 	private Long mobile;
 	
 	
 	@NotNull(message="is Required")
-	private Long  pincode;
+	@Min(10000)
+	@Digits(integer = 5,fraction = 0,message="must  valid pincode of 5 digit")
+	private Integer  pincode;
 	
 	
 	@NotNull(message="is Required")
+	@Min(1)
+	@Digits(integer = 2,fraction = 0,message="must  valid")
 	private Integer years;
 	
 	
 	@NotNull(message="is Required")
+	@Min(1)
+	@Digits(integer = 2,fraction = 0,message="must  valid month")
 	private Integer  months;
 	
 	
 	@NotNull(message="is Required")
+	@Min(10000)
+	@Digits(integer = 5,fraction = 0,message="must  valid pincode of 5 digit")
 	private Integer  employeePincode;
 	
 	
 	@NotNull(message="is Required")
+	@Min(0)
 	private Double loanAmt;
 	
 	
 	@NotNull(message="is Required")
+	@Min(0)
 	private Double annualSal;
 
 
@@ -342,12 +361,12 @@ public class LoanApplicant {
 	}
 
 
-	public Long getPincode() {
+	public Integer getPincode() {
 		return pincode;
 	}
 
 
-	public void setPincode(Long pincode) {
+	public void setPincode(Integer pincode) {
 		this.pincode = pincode;
 	}
 
@@ -400,6 +419,8 @@ public class LoanApplicant {
 	public void setAnnualSal(Double annualSal) {
 		this.annualSal = annualSal;
 	}
+	
+	
 	
 	
 	

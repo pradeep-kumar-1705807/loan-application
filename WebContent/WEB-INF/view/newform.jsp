@@ -107,6 +107,7 @@
 	 
 	 <label for="office">Office Phone</label>
 	 <form:input placeholder="123456" path="officePhone" />
+	 <form:errors path="officePhone" cssClass="error" />
 	  <br>
 	 
 	 <label for="mobi">Mobile</label>
