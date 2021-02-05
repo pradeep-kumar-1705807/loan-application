@@ -1,6 +1,7 @@
 package com.dynamicdudes.model;
 
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -119,8 +120,9 @@ public class LoanApplicant {
 	private Integer years;
 	
 	
-	@NotNull(message="is Required")
-	@Min(1)
+	
+	@Min(0)
+	@Max(12)
 	@Digits(integer = 2,fraction = 0,message="must  valid month")
 	private Integer  months;
 	
