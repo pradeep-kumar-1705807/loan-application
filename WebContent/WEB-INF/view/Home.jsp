@@ -11,7 +11,7 @@
 
 <a href="showform">Click here to submit new application</a>
 <br> <br>
-<a href="newform">Click here to view existing application</a>
+<a href="view">Click here to view existing application</a>
 
 <hr>
 </body>
