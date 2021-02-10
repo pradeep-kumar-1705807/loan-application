@@ -1,18 +1,23 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Submit Application</title>
+<title>View Application</title>
 <style>
 .error{color:red}
 </style>
 </head>
 <body>
 
-<h1>Submit New Application</h1>
-
+<h1>View Application</h1>
+<h3>${loanApplicant.status} </h3>
+<h3>${loanApplicant.declineReason} </h3>
 <hr>
+
+
 
 <form:form action="test-sucessfull" modelAttribute="loanApplicant" method="POST" >
  	<label for="fn">First Name </label>
