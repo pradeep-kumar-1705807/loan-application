@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dynamicdudes.dao.LoanApplicantDAO;
 import com.dynamicdudes.model.LoanApplicant;
-import com.dynamicdudes.model.Student;
 
 @Component
 @Service
