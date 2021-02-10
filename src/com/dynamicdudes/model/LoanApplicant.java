@@ -156,7 +156,7 @@ public class LoanApplicant {
 	
 	
 	@NotNull(message="is Required")
-	@Min(1)
+	@Min(0)
 	@Digits(integer = 2,fraction = 0,message="must  valid")
 	@Column(name="experience_years")
 	private Integer years;
@@ -510,6 +510,9 @@ public class LoanApplicant {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public void setStatus() {
+		this.status = "Approved";
 	}
 
 

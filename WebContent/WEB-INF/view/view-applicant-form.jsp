@@ -13,6 +13,8 @@
 <body>
 
 <h1>View Application</h1>
+
+<h3>${loanApplicant.score} </h3>
 <h3>${loanApplicant.status} </h3>
 <h3>${loanApplicant.declineReason} </h3>
 <hr>
