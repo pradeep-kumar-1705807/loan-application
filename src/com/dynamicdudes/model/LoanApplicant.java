@@ -40,6 +40,7 @@ public class LoanApplicant {
 	private String lastName;
 	
 	
+
 	 
 	
 	@NotNull(message="is Required")
@@ -96,7 +97,6 @@ public class LoanApplicant {
 	
 	
 	@Column(name="designation")
-	
 	private String designation;
 	
 	
@@ -195,40 +195,13 @@ public class LoanApplicant {
 	private String declineReason;
 	
 	@Column(name="application_status")
-	private String applicationStatus;
+	private String status;
 	
-	public Integer getScore() {
-		return score;
-	}
-
-
-	public void setScore(Integer score) {
-		this.score = score;
-	}
-
-	
-
-	public String getDeclineReason() {
-		return declineReason;
-	}
-
-
-	public void setDeclineReason(String declineReason) {
-		this.declineReason = declineReason;
-	}
-
 
 	
 
 
-	public String getApplicationStatus() {
-		return applicationStatus;
-	}
-
-
-	public void setApplicationStatus(String applicationStatus) {
-		this.applicationStatus = applicationStatus;
-	}
+	
 
 
 	@Override
@@ -534,7 +507,41 @@ public class LoanApplicant {
 	public void setAnnualSal(Double annualSal) {
 		this.annualSal = annualSal;
 	}
-	
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		status = "Pending";
+		this.status = status;
+	}
+
+
+	public String getDeclineReason() {
+		return declineReason;
+	}
+
+
+	public void setDeclineReason(String declineReason) {
+		
+		this.declineReason = declineReason;
+	}
+
+
+	public Integer getScore() {
+		return score;
+	}
+
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+
+
 	
 	
 }
