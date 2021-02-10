@@ -13,6 +13,8 @@
 <body>
 
 <h1>View Application</h1>
+
+<h3>${loanApplicant.score} </h3>
 <h3>${loanApplicant.status} </h3>
 <h3>${loanApplicant.declineReason} </h3>
 <hr>
@@ -183,6 +185,7 @@
 	 <br><br> 
 	 <!--  <button onclick="location.href = 'www.google.com';" id="myButton"  >Back</button>-->
 	 <a href="/loan-processing-system/"> <input type="button" value="Back"/></a>
+	 <input type="button" value="Print" onclick=window.print()>
 
 
 

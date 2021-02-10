@@ -20,18 +20,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dynamicdudes.helper.AgeGeneration;
+import com.dynamicdudes.helper.RandomScoreGenerator;
 import com.dynamicdudes.model.LoanApplicant;
 import com.dynamicdudes.service.LoanApplicantService;
+import com.dynamicdudes.service.LoanFrontEndValidator;
 
 @Controller
 public class HomeController {
 	
 	
-	@Autowired 
-	AgeGeneration ageGenerator;
+	
 	
 	@Autowired
 	LoanApplicantService loanApplicantService;
+	
+	@Autowired
+	LoanFrontEndValidator loanFrontEndValidator;
 	
 	
 	@InitBinder
@@ -92,22 +96,17 @@ public class HomeController {
 		else 
 		{
 			
-			age(loanApplicant);
+
+		
+			loanFrontEndValidator.validation(loanApplicant);
+			
 			loanApplicantService.saveLoanApplicant(loanApplicant);
+			
+			
 			return "submitted";
 		}
 	}
 
-	private void age(LoanApplicant loanApplicant) {
-		int age=ageGenerator.getAge(loanApplicant.getDob());
-		System.out.println("Printing age"+age);
-		if(age<18 || age>65)
-		{
-			loanApplicant.setStatus("Declined");
-			loanApplicant.setDeclineReason("Not in the age limits! Sorry!");
-		}
 		
-	}
-	
 	
 }
