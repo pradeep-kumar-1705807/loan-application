@@ -187,8 +187,49 @@ public class LoanApplicant {
 	@Min(0)
 	@Column(name="annual_salary")
 	private Double annualSal;
+	
+	@Column(name="score")
+	private Integer score;
+	 
+	@Column(name="decline_reason")
+	private String declineReason;
+	
+	@Column(name="application_status")
+	private String applicationStatus;
+	
+	public Integer getScore() {
+		return score;
+	}
+
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
 
 	
+
+	public String getDeclineReason() {
+		return declineReason;
+	}
+
+
+	public void setDeclineReason(String declineReason) {
+		this.declineReason = declineReason;
+	}
+
+
+	
+
+
+	public String getApplicationStatus() {
+		return applicationStatus;
+	}
+
+
+	public void setApplicationStatus(String applicationStatus) {
+		this.applicationStatus = applicationStatus;
+	}
+
 
 	@Override
 	public String toString() {
