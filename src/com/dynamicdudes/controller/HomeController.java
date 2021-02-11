@@ -95,12 +95,12 @@ public class HomeController {
 		}
 		else 
 		{
+					
+			loanFrontEndValidator.validation(loanApplicant);
 			
-			loanFrontEndValidator.age(loanApplicant);
-			loanFrontEndValidator.generateScore(loanApplicant);
-			loanFrontEndValidator.checkSalary(loanApplicant);
-			loanFrontEndValidator.experience(loanApplicant);
 			loanApplicantService.saveLoanApplicant(loanApplicant);
+			
+			
 			return "submitted";
 		}
 	}

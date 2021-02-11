@@ -6,6 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#header {
+ text-align: center;
+ }
+table {
+
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+border: 1px solid black;
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
 </head>
 <body>
 
@@ -15,7 +37,7 @@
            <h2>Loan Applicant</h2>
            </div>
      </div>
-     <div id="content">
+     <div style="overflow-x:auto;" id="content">
         <div id="content">
           <table>
               <tr> 
