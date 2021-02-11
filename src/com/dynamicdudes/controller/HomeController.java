@@ -19,16 +19,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dynamicdudes.helper.AgeGeneration;
+import com.dynamicdudes.helper.RandomScoreGenerator;
 import com.dynamicdudes.model.LoanApplicant;
-import com.dynamicdudes.model.Student;
 import com.dynamicdudes.service.LoanApplicantService;
+import com.dynamicdudes.service.LoanFrontEndValidator;
 
 @Controller
 public class HomeController {
 	
 	
+	
+	
 	@Autowired
 	LoanApplicantService loanApplicantService;
+	
+	@Autowired
+	LoanFrontEndValidator loanFrontEndValidator;
 	
 	
 	@InitBinder
@@ -88,10 +95,16 @@ public class HomeController {
 		}
 		else 
 		{
+					
+			loanFrontEndValidator.validation(loanApplicant);
 			
 			loanApplicantService.saveLoanApplicant(loanApplicant);
+			
 			
 			return "submitted";
 		}
 	}
+
+		
+	
 }
