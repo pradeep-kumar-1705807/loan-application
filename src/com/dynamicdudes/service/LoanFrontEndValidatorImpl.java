@@ -50,6 +50,7 @@ public class LoanFrontEndValidatorImpl implements LoanFrontEndValidator {
 	}
 
 	public boolean checkAge(LoanApplicant loanApplicant) {
+		
 		int age = ageGenerator.getAge(loanApplicant.getDob());
 		System.out.println("Printing age" + age);
 		if (age < 18 || age > 65) {
