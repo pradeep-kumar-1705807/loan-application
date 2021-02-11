@@ -1,11 +1,15 @@
 package com.dynamicdudes.model;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+
 
 import com.dynamicdudes.customvalidation.CustomDOB;
 
@@ -15,9 +19,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "loanapplicant")
+@Table(name = "loanapplicant",uniqueConstraints={@UniqueConstraint(columnNames={"ssn"})})
+
 public class LoanApplicant {
 
 	@Id
@@ -75,10 +81,11 @@ public class LoanApplicant {
 	@Column(name = "state")
 	private String state;
 
+	@Email
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "email_address")
-	@Pattern(regexp = "^(.+)@(.+)$", message = "enter valid email")
+	
 	private String email;
 
 	@NotNull(message = "is Required")
@@ -111,7 +118,6 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Min(0)
 	@Column(name = "ssn")
-
 	private Long ssnNumber;
 
 	@NotNull(message = "is Required")
@@ -417,7 +423,9 @@ public class LoanApplicant {
 	}
 
 	public void setAnnualSal(Double annualSal) {
+	
 		this.annualSal = annualSal;
+	
 	}
 
 	public Integer getScore() {
