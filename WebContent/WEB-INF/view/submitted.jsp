@@ -11,6 +11,6 @@
 ${loan.firstName} ${loan.lastName} your application is submitted successfully.
 
 
-<a href="/loan-processing-system/"> <input type="button" value="Home"/></a>
+
 </body>
 </html>
