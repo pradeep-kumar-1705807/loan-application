@@ -95,9 +95,7 @@ public class HomeController {
 		}
 		else 
 		{
-			
-
-		
+					
 			loanFrontEndValidator.validation(loanApplicant);
 			
 			loanApplicantService.saveLoanApplicant(loanApplicant);
