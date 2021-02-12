@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dynamicdudes.dao.LoanApplicantDAO;
+import com.dynamicdudes.dao.LoanApplicantDAOImpl;
 import com.dynamicdudes.model.LoanApplicant;
 
 @Component
@@ -46,6 +47,24 @@ public class LoanApplicantServiceImpl implements LoanApplicantService
 	public LoanApplicant getLoanApplicantById(int applicationId) {
 		
 		 return loanApplicantDAO.getLoanApplicantById(applicationId);	
+	}
+
+
+
+	@Override
+	@Transactional
+	public boolean isUniqueSSN(Long ssn) {
+		
+		
+		LoanApplicant loanApplicant = loanApplicantDAO.isSsnAlreadyPresent(ssn);
+		
+		
+		if(loanApplicant != null)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 
 	

@@ -1,16 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
+	pageEncoding="ISO-8859-1"%>
+
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Your form has been submitted</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link
+	href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700'
+	rel='stylesheet' type='text/css'>
+<style>
+@import
+	url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css)
+	;
+
+@import
+	url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css)
+	;
+</style>
+<link rel="stylesheet"
+	href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
+<script
+	src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
+<script
+	src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
 </head>
 <body>
+	<header class="site-header" id="header">
+		<h1 class="site-header__title" data-lead-id="site-header-title">THANK
+			YOU!</h1>
+	</header>
 
-${loan.firstName} ${loan.lastName} your application is submitted successfully.
+	<div class="main-content">
+		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<p class="main-content__body" data-lead-id="main-content-body">
+		<h2>${loan.firstName}  ${loan.lastName}, your submission has been
+			received.</h2>
+		<h4>Please wait while we are processing your Application with Id:
+			${loan.applicationId}</h4>
+		</p>
+		<span id="timer"> </span>
 
 
+	</div>
 
+
+	<footer class="site-footer" id="footer">
+		<p class="site-footer__fineprint" id="fineprint">Copyright ©2021 |
+			All Rights Reserved</p>
+	</footer>
 </body>
+<script type="text/javascript">
+	var count = 10;
+	var redirect = "http://localhost:8080/loan-processing-system/";
+
+	function countDown() {
+		var timer = document.getElementById("timer");
+		if (count > 0) {
+			count--;
+			timer.innerHTML = "This page will redirect in " + count
+					+ " seconds.";
+			setTimeout("countDown()", 1000);
+		} else {
+			window.location.href = redirect;
+		}
+	}
+	countDown();
+</script>
 </html>
+
