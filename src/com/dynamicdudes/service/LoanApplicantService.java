@@ -12,5 +12,7 @@ public interface LoanApplicantService {
 	
 	public LoanApplicant getLoanApplicantById(int applicationId);
 	
+	public boolean isUniqueSSN(Long ssn);
+	
 
 }

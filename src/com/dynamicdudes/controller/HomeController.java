@@ -45,6 +45,12 @@ public class HomeController {
 		
 	}
 	
+//	@RequestMapping("/testing")
+//	public void testingPurpose()
+//	{
+//		System.out.println(loanApplicantService.isUniqueSSN(100010L));
+//	}
+	
 	@RequestMapping("/")
 	public String showPage()
 	{

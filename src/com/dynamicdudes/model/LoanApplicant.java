@@ -1,17 +1,18 @@
 package com.dynamicdudes.model;
 
-import javax.validation.Valid;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.dynamicdudes.customvalidation.CustomSsn;
 
-
-import com.dynamicdudes.customvalidation.CustomDOB;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -47,7 +48,9 @@ public class LoanApplicant {
 
 	@NotNull(message = "is Required")
 	@Column(name = "date_of_birth")
-	@CustomDOB
+
+	
+	@Pattern(regexp = "^((19|2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",message="date must be yyyy-mm-dd format Ex:1992-01-05")
 	private String dob;
 
 	@NotNull(message = "is Required")
@@ -118,6 +121,7 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Min(0)
 	@Column(name = "ssn")
+	@CustomSsn
 	private Long ssnNumber;
 
 	@NotNull(message = "is Required")
