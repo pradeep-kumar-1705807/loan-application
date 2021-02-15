@@ -1,4 +1,4 @@
-package com.dynamicdudes.testdb;
+package com.dynamicdudes.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;

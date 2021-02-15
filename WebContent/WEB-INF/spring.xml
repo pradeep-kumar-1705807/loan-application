@@ -15,7 +15,18 @@
   http://www.springframework.org/schema/tx/spring-tx.xsd">
  
  <context:component-scan base-package="com.dynamicdudes"/>
+ <context:component-scan base-package="com.dynamicdudes.dao"/>
+ <context:component-scan base-package="com.dynamicdudes.service"/>
+ <context:component-scan base-package="com.dynamicdudes.model"/>
+ <context:component-scan base-package="com.dynamicdudes.controller"/>
+ <context:component-scan base-package="com.dynamicdudes.helper"/>
+ <context:component-scan base-package="com.dynamicdudes.test"/>
+ 
  <mvc:annotation-driven/>
+ 
+ 
+   <bean id="loanApplicantDAOImpl" class="com.dynamicdudes.dao.LoanApplicantDAOImpl">
+    </bean>
  
 <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

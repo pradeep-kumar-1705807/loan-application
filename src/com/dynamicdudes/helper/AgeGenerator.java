@@ -2,6 +2,7 @@ package com.dynamicdudes.helper;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -21,12 +22,14 @@ public class AgeGenerator implements AgeGeneration {
 		        LocalDate dob
 		            = LocalDate.parse(date); 
 		        
-		        Period p = Period.between(dob, today);
+		        Period period = Period.between(dob, today);
 		        
-		        age=p.getYears();
+		        age = period.getYears();
+		        System.out.print("............."+age+"..........");
 		        return age;
 		        
 		        	       
 		    }
+
 	}
 
