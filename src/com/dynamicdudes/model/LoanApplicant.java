@@ -10,7 +10,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+
 import com.dynamicdudes.customvalidation.CustomSsn;
+
+
 
 import java.util.Date;
 
@@ -23,8 +26,6 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "loanapplicant",uniqueConstraints={@UniqueConstraint(columnNames={"ssn"})})
-
 public class LoanApplicant {
 
 	@Id
@@ -35,21 +36,22 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "first_name")
+	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
 	private String firstName;
 
 	@Size(max = 255, message = "255 character limit")
+	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
 	@Column(name = "middle_name")
 	private String midName;
 
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
+	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
 	@Column(name = "last_name")
 	private String lastName;
 
 	@NotNull(message = "is Required")
 	@Column(name = "date_of_birth")
-
-	
 	@Pattern(regexp = "^((19|2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",message="date must be yyyy-mm-dd format Ex:1992-01-05")
 	private String dob;
 
@@ -77,11 +79,13 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "city")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabet")
 	private String city;
 
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "state")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabet")
 	private String state;
 
 	@Email
@@ -94,6 +98,7 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "employee_name")
+	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
 	private String employeeName;
 
 	@Column(name = "designation")
@@ -111,11 +116,13 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "employee_city")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabets")
 	private String employeeCity;
 
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "employee_state")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabets")
 	private String employeeState;
 
 	@NotNull(message = "is Required")
@@ -125,55 +132,52 @@ public class LoanApplicant {
 	private Long ssnNumber;
 
 	@NotNull(message = "is Required")
-	@Min(1000000000L)
-	@Digits(integer = 10, fraction = 0, message = "must valid office Phone of 10 digit")
+	@Pattern(regexp="^[0-9]{10}$",message="must only be numeric and 10-digit value")
 	@Column(name = "home_phone")
-	private Long homePhone;
+	
+	private String homePhone;
 
-	@Min(1000000000L)
-	@Digits(integer = 10, fraction = 0, message = "must valid mobile of 10 digit")
+
 	@Column(name = "office_phone")
-	private Long officePhone;
+	@Pattern(regexp="^[0-9]{10}$",message="must only be numeric and 10-digit value")
+	private String officePhone;
 
 	@NotNull(message = "is Required")
-	@Min(1000000000L)
-	@Digits(integer = 10, fraction = 0, message = "must valid mobile of 10 digit")
+	
 	@Column(name = "mobile_number")
-	private Long mobile;
+	@Pattern(regexp="^[0-9]{10}$",message="must only be numeric and 10-digit value")
+	private String mobile;
 
 	@NotNull(message = "is Required")
-	@Min(10000)
-	@Digits(integer = 5, fraction = 0, message = "must  valid postalcode of 5 digit")
 	@Column(name = "postal_code")
-	private Integer postalcode;
+	@Pattern(regexp="^[0-9]{5}$",message="must only be numeric and 5-digit value")
+	private String postalcode;
 
 	@NotNull(message = "is Required")
-	@Min(0)
-	@Digits(integer = 2, fraction = 0, message = "must  valid")
+	@Size(max = 2, message = "must be a valid year")
 	@Column(name = "experience_years")
-	private Integer years;
+	@Pattern(regexp="^([0-9]*)$",message="must be a valid year")
+	private String years;
 
-	@Min(0)
-	@Max(12)
-	@Digits(integer = 2, fraction = 0, message = "must  valid month")
+	
 	@Column(name = "experience_months")
-	private Integer months;
+	@Pattern(regexp="^(0?[1-9]|1[012])$",message="must be a valid month")
+	private String months;
 
 	@NotNull(message = "is Required")
-	@Min(10000)
-	@Digits(integer = 5, fraction = 0, message = "must  valid pincode of 5 digit")
 	@Column(name = "employee_postalcode")
-	private Integer employeePostalcode;
+	@Pattern(regexp="^[0-9]{5}$",message="must only be numeric and 5-digit value")
+	private String employeePostalcode;
 
 	@NotNull(message = "is Required")
-	@Min(0)
 	@Column(name = "loan_amount")
-	private Double loanAmt;
+	@Pattern(regexp="^[+-]?([0-9]*[.])?[0-9]+$",message="enter valid loan amount")
+	private String loanAmt;
 
 	@NotNull(message = "is Required")
-	@Min(0)
 	@Column(name = "annual_salary")
-	private Double annualSal;
+	@Pattern(regexp="^[+-]?([0-9]*[.])?[0-9]+$",message="enter valid salary ")
+	private String annualSal;
 
 	@Column(name = "score")
 	private Integer score;
@@ -358,78 +362,76 @@ public class LoanApplicant {
 		this.ssnNumber = ssnNumber;
 	}
 
-	public Long getHomePhone() {
+	public String getHomePhone() {
 		return homePhone;
 	}
 
-	public void setHomePhone(Long homePhone) {
+	public void setHomePhone(String homePhone) {
 		this.homePhone = homePhone;
 	}
 
-	public Long getOfficePhone() {
+	public String getOfficePhone() {
 		return officePhone;
 	}
 
-	public void setOfficePhone(Long officePhone) {
+	public void setOfficePhone(String officePhone) {
 		this.officePhone = officePhone;
 	}
 
-	public Long getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Long mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
-	public Integer getPostalcode() {
+	public String getPostalcode() {
 		return postalcode;
 	}
 
-	public void setPostalcode(Integer postalcode) {
+	public void setPostalcode(String postalcode) {
 		this.postalcode = postalcode;
 	}
 
-	public Integer getYears() {
+	public String  getYears() {
 		return years;
 	}
 
-	public void setYears(Integer years) {
+	public void setYears(String years) {
 		this.years = years;
 	}
 
-	public Integer getMonths() {
+	public String getMonths() {
 		return months;
 	}
 
-	public void setMonths(Integer months) {
+	public void setMonths(String months) {
 		this.months = months;
 	}
 
-	public Integer getEmployeePostalcode() {
+	public String getEmployeePostalcode() {
 		return employeePostalcode;
 	}
 
-	public void setEmployeePostalcode(Integer employeePostalcode) {
+	public void setEmployeePostalcode(String employeePostalcode) {
 		this.employeePostalcode = employeePostalcode;
 	}
 
-	public Double getLoanAmt() {
+	public String getLoanAmt() {
 		return loanAmt;
 	}
 
-	public void setLoanAmt(Double loanAmt) {
+	public void setLoanAmt(String loanAmt) {
 		this.loanAmt = loanAmt;
 	}
 
-	public Double getAnnualSal() {
+	public String getAnnualSal() {
 		return annualSal;
 	}
 
-	public void setAnnualSal(Double annualSal) {
-	
+	public void setAnnualSal(String annualSal) {
 		this.annualSal = annualSal;
-	
 	}
 
 	public Integer getScore() {
@@ -455,5 +457,10 @@ public class LoanApplicant {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	
+	
+
+	
 
 }

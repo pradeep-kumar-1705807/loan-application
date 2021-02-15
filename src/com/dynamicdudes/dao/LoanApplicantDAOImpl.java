@@ -24,7 +24,14 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	@Override
 	public void saveLoanApplicant(LoanApplicant loanApplicant) {
 		
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession ;
+		try {
+	   		currentSession =  sessionFactory.getCurrentSession();
+	   		}
+	   		catch (HibernateException mye) 
+	   		{
+	   			currentSession = sessionFactory.openSession();
+	   		}
 		
 		currentSession.save(loanApplicant);
 		
@@ -33,7 +40,14 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	@Override
 	public List<LoanApplicant> getLoanApplicants() {
 		
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession ;
+		try {
+	   		currentSession =  sessionFactory.getCurrentSession();
+	   		}
+	   		catch (HibernateException mye) 
+	   		{
+	   			currentSession = sessionFactory.openSession();
+	   		}
 		
 		Query<LoanApplicant> query = currentSession
 				.createQuery("from LoanApplicant",LoanApplicant.class);
@@ -44,7 +58,14 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	@Override
 	public LoanApplicant getLoanApplicantById(int applicationId) {
 		
-       Session currentSession = sessionFactory.getCurrentSession();
+       Session currentSession ;
+       try {
+   		currentSession =  sessionFactory.getCurrentSession();
+   		}
+   		catch (HibernateException mye) 
+   		{
+   			currentSession = sessionFactory.openSession();
+   		}
 		
 		return currentSession.get(LoanApplicant.class, applicationId);
 	}

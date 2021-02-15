@@ -66,6 +66,7 @@ margin-left: 14px;
 } */
 .error{color:red}
 </style>
+
 </head>
 <body bgcolor="powderblue">
 <div style="margin-top: 50px; margin-left: 50px">
@@ -151,6 +152,7 @@ Contact Information
 	 <form:errors path="officePhone" cssClass="error" />
 	 <!-- <label for="mobi">Mobile</label> -->
 	 Mobile:          <form:input placeholder="123456" path="mobile" /> 
+	                 
 	 <form:errors path="mobile" cssClass="error" />
 	 <!-- <label for="mail">Email Address</label> -->
 	 Email Address:   <form:input placeholder="test@test.com" path="email" />

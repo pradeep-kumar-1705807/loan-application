@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -20,13 +21,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dynamicdudes.dao.LoanApplicantDAO;
 import com.dynamicdudes.dao.LoanApplicantDAOImpl;
+import com.dynamicdudes.model.LoanApplicant;
+
 
 
  
 class LoanApplicantDAOTest {
+	ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("file:WebContent/WEB-INF/spring.xml");;
+	LoanApplicantDAO loanApplicantDAO = (LoanApplicantDAO) context.getBean("loanApplicantDAOImpl",LoanApplicantDAOImpl.class);
 	
-
-
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -35,11 +38,6 @@ class LoanApplicantDAOTest {
 	void testUniqueSsnNumber()  {
 	
 		
-		ClassPathXmlApplicationContext context =  
-				new ClassPathXmlApplicationContext("file:WebContent/WEB-INF/spring.xml");
-		
-		LoanApplicantDAO loanApplicantDAO = (LoanApplicantDAO) context.getBean("loanApplicantDAOImpl",LoanApplicantDAOImpl.class);
-		
 		if(loanApplicantDAO != null)
 		{
 			assertNotNull( loanApplicantDAO.isSsnAlreadyPresent(12765L) );
@@ -47,14 +45,44 @@ class LoanApplicantDAOTest {
 			assertNotNull( loanApplicantDAO.isSsnAlreadyPresent(127659L) );
 			
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(237659L) );
-			assertNull( loanApplicantDAO.isSsnAlreadyPresent(4357659L) );
+		//	assertNull( loanApplicantDAO.isSsnAlreadyPresent(Long.parseLong("")) );
+			assertNull( loanApplicantDAO.isSsnAlreadyPresent(null) );
+			
 			
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(-927659L) );
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(-157659L) );
 			
+			//assertNotNull( loanApplicantDAO.getLoanApplicantById(12) );
+			
 			
 		}
 		
+		
 	}
+	@Test
 
+	void testGetApplicantById()
+	{
+		
+		assertNull( loanApplicantDAO.getLoanApplicantById(12) );
+		//assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt(null)) );
+		assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt("")) );
+		
+		
+		assertNotNull( loanApplicantDAO.getLoanApplicantById(14) );
+		assertNotNull( loanApplicantDAO.getLoanApplicantById(15) );
+		assertNotNull( loanApplicantDAO.getLoanApplicantById(80) );
+	}
+	
+	@Test
+	void testGetApplicants()
+	{
+		
+		List<LoanApplicant>  loanApplicants = loanApplicantDAO.getLoanApplicants();
+		assertNotNull( loanApplicants );
+		
+		
+	}
+	
+	
 }
