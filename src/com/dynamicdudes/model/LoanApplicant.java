@@ -12,8 +12,7 @@ import javax.validation.constraints.Size;
 
 
 import com.dynamicdudes.customvalidation.CustomSsn;
-
-
+import com.dynamicdudes.customvalidation.FutureDate;
 
 import java.util.Date;
 
@@ -52,6 +51,7 @@ public class LoanApplicant {
 
 	@NotNull(message = "is Required")
 	@Column(name = "date_of_birth")
+	@FutureDate
 	@Pattern(regexp = "^((19|2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",message="date must be yyyy-mm-dd format Ex:1992-01-05")
 	private String dob;
 
