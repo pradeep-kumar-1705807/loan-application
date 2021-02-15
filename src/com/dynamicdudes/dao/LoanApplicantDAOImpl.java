@@ -3,6 +3,7 @@ package com.dynamicdudes.dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -51,20 +52,27 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	@Override
 	public LoanApplicant isSsnAlreadyPresent(Long ssn) {
 		
-		System.out.println(".........Mujhle bulya kya .......");
+		
 		LoanApplicant loanApplicant = null;
 		Query<LoanApplicant> query;
 		
-		Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession;
+		try {
+		currentSession =  sessionFactory.getCurrentSession();
+		}
+		catch (HibernateException mye) 
+		{
+			currentSession = sessionFactory.openSession();
+		}
 		try {
 		
 		query  = currentSession.createQuery("from LoanApplicant l where l.ssnNumber = :ssn",LoanApplicant.class);
 		query.setParameter("ssn",ssn);
 		loanApplicant =  query.getSingleResult();
-		if(loanApplicant != null) {
-
-			System.out.println("......... LOAN APPLICANT BY SSN .........." + loanApplicant.toString());
-		}
+//		if(loanApplicant != null) {
+//
+//			System.out.println("......... LOAN APPLICANT BY SSN .........." + loanApplicant.toString());
+//		}
 		}
 		catch(Exception e)
 		{
