@@ -45,6 +45,7 @@ tr:nth-child(even) {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Status</th>
               </tr>
               <c:forEach var="tempLoanApplicant" items="${loanApplicants}">
               <c:url var="updateLink" value="view-form">
@@ -56,6 +57,7 @@ tr:nth-child(even) {
                     <th>${tempLoanApplicant.firstName}</th>
                     <th>${tempLoanApplicant.lastName}</th>
                     <th>${tempLoanApplicant.email}</th>
+                    <th>${tempLoanApplicant.status}</th>
               </tr>
               </c:forEach>
           </table>
