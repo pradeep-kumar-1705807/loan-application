@@ -37,6 +37,15 @@ tr:nth-child(even) {
            <h2>Loan Applicant</h2>
            </div>
      </div>
+   <!--   <form:form action="search" method="GET">
+                Search Loan Applicant: <input type="text" name="theSearchName" />
+                
+                <input type="submit" value="Search" class="add-button" />
+     </form:form>
+     <br><br>
+     --> 
+     
+     
      <div style="overflow-x:auto;" id="content">
         <div id="content">
           <table>
@@ -45,6 +54,7 @@ tr:nth-child(even) {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Status</th>
               </tr>
               <c:forEach var="tempLoanApplicant" items="${loanApplicants}">
               <c:url var="updateLink" value="view-form">
@@ -56,6 +66,8 @@ tr:nth-child(even) {
                     <th>${tempLoanApplicant.firstName}</th>
                     <th>${tempLoanApplicant.lastName}</th>
                     <th>${tempLoanApplicant.email}</th>
+                    <th>${tempLoanApplicant.status}</th>
+                    
               </tr>
               </c:forEach>
           </table>
