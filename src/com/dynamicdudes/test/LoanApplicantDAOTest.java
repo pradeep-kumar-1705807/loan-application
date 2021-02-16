@@ -24,7 +24,8 @@ import com.dynamicdudes.model.LoanApplicant;
  
 class LoanApplicantDAOTest {
 	
-	ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("file:WebContent/WEB-INF/spring.xml");;
+	ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("file:WebContent/WEB-INF/spring.xml");
+	
 	LoanApplicantDAO loanApplicantDAO = (LoanApplicantDAO) context.getBean("loanApplicantDAOImpl",LoanApplicantDAOImpl.class);
 	
 	@BeforeAll
