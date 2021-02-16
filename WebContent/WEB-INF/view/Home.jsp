@@ -5,85 +5,139 @@
     <html>
 <head>
 <title>ABC Bank Ltd</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html{
-background-color:powderblue;}
-body{
-width:95%;
-height:auto;
-margin:auto;
-background-color:powderblue;
-font-family:"Arial",'Helvetica Neue',RobotoMedium , Helvetica, sans-serif;
-font-size:24px;
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+header {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://cdn.corporatefinanceinstitute.com/assets/Loans-1.jpeg);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: #fff;
+	color: #333;
+}
+.logo {
+	float: left;
+}
+.logo img {
+	width: 100%;
+	padding: 15px 0;
+}
+.welcome-text {
+	position: absolute;
+	width: 600px;
+	height: 300px;
+	margin: 20% 30%;
+	text-align: center;
+}
+.welcome-text h1 {
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.welcome-text h1 span {
+	color: #00fecb;
+}
+.welcome-text a {
+	border: 1px solid #fff;
+	padding: 10px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-top: 20px;
+	display: inline-block;
+	color: #fff;
+}
+.welcome-text a:hover {
+	background: #fff;
+	color: #333;
+}
+/*resposive*/
+
+@media (max-width:600px) {
+	.wrapper {
+		width: 100%;
+	}
+	.logo {
+		float: none;
+		width: 50%;
+		text-align: center;
+		margin: auto;
+	}
+	img {
+		width: ;
+	}
+	.nav-area {
+		float: none;
+		margin-top: 0;
+	}
+	.nav-area li a {
+		padding: 5px;
+		font-size: 11px;
+	}
+	.nav-area {
+		text-align: center;
+	}
+	.welcome-text {
+		width: 100%;
+		height: auto;
+		margin: 30% 0;
+	}
+	.welcome-text h1 {
+		font-size: 30px;
+	}
 }
 
-.head{
-width:100%;
-}
-.headerTitle{
-float:right;
-}
-.headerTitle p{
-text-align:right; 
-}
-.headerTitle .main{
-border-style:solid
-font-weight:900;
-font-size:40px;
-margin-top:65;
-padding-bottom:0;
-margin-bottom:0;
-}
-.headerTitle .sub{
-margin-top:0;
-font-weight:700;
-font-size:32px;
-}
-.leftContent{
-width:60%;
-height:auto;
-float:left;
-}
-.rightContent{
-float:right;
-width:25%;
-text-align:left;
-padding-top:70px;
-margin-left:-200px;
-}
-h1{
-padding:30 10 30 10;
-font-size:40px;
-}
 </style>
 <body>
-<div class="head">
-<div class="headerTitle" >
-<p class="main">ABC Bank</p>
-<p class="sub">Loan Processing Application </p>
+ <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+        </div>
+<ul class="nav-area">
+<li><a href="showform">Submit your application</a></li>
+<li><a href="view">View Your application</a></li>
+<li><a href="#">Services</a></li>
+</ul>
 </div>
-</div>
-<div class="mainContent">
-<h1>Welcome, Now get your loan approved instantly !!!</h1>
-<div class="leftContent">
-
-<p>Welcome to ABC Bank Loan processing system. Now get your
-loan approved immediately using this cool and fully
-automated application.</p><p>
-In order to Submit a new loan request, click on "Submit an
-application" link on the right.</p><p>
-For viewing existing loan application's , click on "View
-applications" link</p>
-</div>
-<div class="rightContent">
-<a href="showform" >Submit an application</a>
-<br />
-<br />
-<br />
-<a href="view">View Application </a>
-</div>
-</div>
-
-</head>
+<div class="welcome-text">
+        <h1>
+Get your<br> <span>Loan Approved Today!</span></h1>
+<a href="#">Contact US</a>
+    </div>
+</header>
+</body>
 </html>
     

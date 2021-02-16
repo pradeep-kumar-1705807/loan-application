@@ -161,7 +161,7 @@ public class LoanApplicant {
 
 	
 	@Column(name = "experience_months")
-	@Pattern(regexp="^(0?[1-9]|1[012])$",message="must be a valid month")
+	@Pattern(regexp="^(0?[1-9]|1[01])$",message="must be a valid month")
 	private String months;
 
 	@NotNull(message = "is Required")
