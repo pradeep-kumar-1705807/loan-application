@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/select2/select2.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/mdi-font/css/material-design-iconic-font.min.css" />" rel="stylesheet" media="all">
+<link href="<c:url value="/resources/vendor/datepicker/daterangepicker.css" />" rel="stylesheet">
+<%-- <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
+<script src="<c:url value="/resources/js/global.js" />"></script> --%>
 <title style="align:center;">Submit Application</title>
-<style>
-.error{color:red}
-</style>
 
 </head>
 <body bgcolor="powderblue">
@@ -18,7 +21,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Submit Your Application</h2>
+                    <h2 class="title">Submit your application</h2>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -30,15 +33,15 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Middle name</label>
-                                    <form:input class="input--style-4" placeholder="Middle Name" path="midName" />
-                                    <form:errors path="midName" cssClass="error" /> 
+                                    <input class="input--style-4" placeholder="Middle Name" path="midName" />
+                                          <form:errors path="midName" cssClass="error" /> 
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Last name</label>
-                                    <form:input class="input--style-4" placeholder="Last Name" path="lastName" />
-                                     <form:errors path="lastName" cssClass="error" /> 
+                                    <input class="input--style-4" placeholder="Last Name" path="lastName" />
+                                          <form:errors path="lastName" cssClass="error" /> 
                                 </div>
                             </div>
                         </div>
@@ -239,36 +242,26 @@
                                 <div class="input-group">
                                     <label class="label">Desgination</label>
                                     <form:input class="input--style-4" placeholder="Designation" path="designation"/>
-                                            <form:errors path="designation" cssClass="error" />  </div>
+                                             <form:errors path="designation" cssClass="error" />  </div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Experience Year</label>
+                                    <label class="label">Experience</label>
                                     
-                                    <form:input class="input--style-4" placeholder="Years" path="years" />
-                                    <form:errors path="years" cssClass="error" /> 
-                                       </div>
-                                    </div>
-                                    
-                                    <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Month</label>
-                                    
-                                    <form:input class="input--style-4" placeholder="Months" path="months" />
-                                    <form:errors path="months" cssClass="error" />   </div>
+                                    <form:input class="input--style-4" placeholder="Years" path="years" /><%-- <form:errors path="years" cssClass="error" /> <form:input placeholder="Months" path="months" /><form:errors path="months" cssClass="error" />  --%> </div>
                                     </div>
                                 
                                 </div>
          
     
                         <div class="p-t-15">
-                        <input type="submit" class="btn btn--radius-2 btn--blue" value="Submit" />
+                        <input type="submit" value="Submit" />
                            <!--  <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button> -->
                         </div>
                         </div>
-                    
+                    <%-- </form:form> --%>
                 </div>
             </div>
         </div>
@@ -283,11 +276,4 @@
 </form:form>
 </div>
 </body>
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/vendor/select2/select2.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/vendor/mdi-font/css/material-design-iconic-font.min.css" />" rel="stylesheet" media="all">
-<link href="<c:url value="/resources/vendor/datepicker/daterangepicker.css" />" rel="stylesheet">
-<%-- <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
-<script src="<c:url value="/resources/js/global.js" />"></script> --%>
 </html>

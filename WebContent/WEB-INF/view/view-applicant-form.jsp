@@ -193,6 +193,7 @@ Contact Information
 </div>
 <br>
 	<a href="view"> <input type="button" value="Back"/></a>
+	 <input type="button" value="Print" onclick="window.print()"/>
 </form:form>
 </body>
 </html>
