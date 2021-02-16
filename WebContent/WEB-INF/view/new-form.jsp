@@ -23,21 +23,21 @@
                             <div class="col-2">
                                 <div class="input-group">
                                    <label class="label">first name</label>
-                                    <form:input class="input--style-4" placeholder="First Name" path="firstName" />
+                                    <form:input class="input--style-4" placeholder="" path="firstName" />
                                           <form:errors path="firstName" cssClass="error" /> 
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Middle name</label>
-                                    <form:input class="input--style-4" placeholder="Middle Name" path="midName" />
+                                    <form:input class="input--style-4" placeholder="" path="midName" />
                                     <form:errors path="midName" cssClass="error" /> 
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Last name</label>
-                                    <form:input class="input--style-4" placeholder="Last Name" path="lastName" />
+                                    <form:input class="input--style-4" placeholder="" path="lastName" />
                                      <form:errors path="lastName" cssClass="error" /> 
                                 </div>
                             </div>
@@ -69,16 +69,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">SSN Number</label>
-                                    <form:input class="input--style-4" placeholder="SSN Number" path="ssnNumber"/>
+                                    <form:input class="input--style-4" placeholder="" path="ssnNumber"/>
                                            <form:errors path="ssnNumber" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                         
-                                <div class="row row-space">
+                                
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Loan Amount</label>
-                                    <form:input class="input--style-4" placeholder="Loan Amount" path="loanAmt"/>
+                                    <form:input class="input--style-4" placeholder="" path="loanAmt"/>
                                              <form:errors path="loanAmt" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -99,7 +97,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Description</label>
-                                    <form:textarea path="desc" rows="7" cols="70"></form:textarea>
+                                    <form:textarea class="input--style-5" path="desc" rows="7" cols="70"></form:textarea>
                                      </div>
                                     </div>
                                 </div>
@@ -108,15 +106,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 1</label>
-                                    <form:input class="input--style-4" placeholder="Address Line 1" path="addrOne" /> 
+                                    <form:input class="input--style-4" placeholder="" path="addrOne" /> 
 	                                     <form:errors path="addrOne" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                               
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 2</label>
-                                    <form:input class="input--style-4" placeholder="Address Line 2" path="addrTwo" />
+                                    <form:input class="input--style-4" placeholder="" path="addrTwo" />
                                              <form:errors path="addrTwo" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -124,15 +121,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">City</label>
-                                    <form:input class="input--style-4" placeholder="City" path="city"/>
+                                    <form:input class="input--style-4" placeholder="" path="city"/>
                                              <form:errors path="city" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                               
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">State</label>
-                                    <form:input class="input--style-4" placeholder="State" path="state"/>
+                                    <form:input class="input--style-4" placeholder="" path="state"/>
                                              <form:errors path="state" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -140,7 +136,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Postal Code</label>
-                                    <form:input class="input--style-4" placeholder="Postal Code" path="postalcode"/>
+                                    <form:input class="input--style-4" placeholder="" path="postalcode"/>
                                              <form:errors path="postalcode" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -149,15 +145,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Home Phone</label>
-                                    <form:input class="input--style-4" placeholder="1234567" path="homePhone" />
+                                    <form:input class="input--style-4" placeholder="" path="homePhone" />
                                              <form:errors path="homePhone" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                                
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Mobile Phone</label>
-                                    <form:input class="input--style-4" placeholder="1234567" path="mobile"/>
+                                    <form:input class="input--style-4" placeholder="" path="mobile"/>
                                              <form:errors path="mobile" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -165,15 +160,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Office Phone</label>
-                                    <form:input class="input--style-4" placeholder="1234567" path="officePhone"/>
+                                    <form:input class="input--style-4" placeholder="" path="officePhone"/>
                                              <form:errors path="officePhone" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                               
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <form:input class="input--style-4" placeholder="test@test.com" path="email"/>
+                                    <form:input class="input--style-4" placeholder="" path="email"/>
                                              <form:errors path="email" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -185,12 +179,11 @@
                                     <form:input class="input--style-4" placeholder="Name" path="employeeName" />
                                              <form:errors path="employeeName" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                              
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Annual Salary</label>
-                                    <form:input class="input--style-4" placeholder="1234567" path="annualSal"/>
+                                    <form:input class="input--style-4" placeholder="" path="annualSal"/>
                                              <form:errors path="annualSal" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -198,31 +191,28 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 1</label>
-                                    <form:input class="input--style-4" placeholder="Address Line 1" path="employeeAddressOne" /> 
+                                    <form:input class="input--style-4" placeholder="" path="employeeAddressOne" /> 
 	                                     <form:errors path="employeeAddressOne" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                                
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 2</label>
-                                    <form:input class="input--style-4" placeholder="Address Line 2" path="employeeAddressTwo" />
+                                    <form:input class="input--style-4" placeholder="" path="employeeAddressTwo" />
                                              <form:errors path="employeeAddressTwo" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                               
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">City</label>
-                                    <form:input class="input--style-4" placeholder="City" path="employeeCity"/>
+                                    <form:input class="input--style-4" placeholder="" path="employeeCity"/>
                                              <form:errors path="employeeCity" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                                
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">State</label>
-                                    <form:input class="input--style-4" placeholder="State" path="employeeState"/>
+                                    <form:input class="input--style-4" placeholder="" path="employeeState"/>
                                              <form:errors path="employeeState" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -230,15 +220,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Postal Code</label>
-                                    <form:input class="input--style-4" placeholder="Postal Code" path="employeePostalcode"/>
+                                    <form:input class="input--style-4" placeholder="" path="employeePostalcode"/>
                                              <form:errors path="employeePostalcode" cssClass="error" />  </div>
                                     </div>
-                                </div>
-                                <div class="row row-space">
+                                
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Desgination</label>
-                                    <form:input class="input--style-4" placeholder="Designation" path="designation"/>
+                                    <form:input class="input--style-4" placeholder="" path="designation"/>
                                             <form:errors path="designation" cssClass="error" />  </div>
                                     </div>
                                 </div>
@@ -247,7 +236,7 @@
                                 <div class="input-group">
                                     <label class="label">Experience Year</label>
                                     
-                                    <form:input class="input--style-4" placeholder="Years" path="years" />
+                                    <form:input class="input--style-4" placeholder="" path="years" />
                                     <form:errors path="years" cssClass="error" /> 
                                        </div>
                                     </div>
@@ -256,18 +245,35 @@
                                 <div class="input-group">
                                     <label class="label">Month</label>
                                     
-                                    <form:input class="input--style-4" placeholder="Months" path="months" />
+                                    <form:input class="input--style-4" placeholder="" path="months" />
                                     <form:errors path="months" cssClass="error" />   </div>
                                     </div>
                                 
                                 </div>
-         
-    
-                        <div class="p-t-15">
-                        <input type="submit" class="btn btn--radius-2 btn--blue" value="Submit" />
-                           <!--  <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button> -->
-                        </div>
-                        </div>
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="p-t-15">
+									<input type="submit" class="btn btn--radius-2 btn--blue"
+										value="Submit" />
+									
+								</div>
+
+							</div>
+
+							<div class="col-2">
+								<div class="p-t-15">
+									<a href="http://localhost:8080/loan-processing-system/" ><input type="button" class="btn btn--radius-2 btn--blue"
+										value="Back" /></a>
+									
+								</div>
+
+							</div>
+
+						</div>
+
+
+
+					</div>
                     
                 </div>
             </div>
