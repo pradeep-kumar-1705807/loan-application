@@ -6,6 +6,7 @@
 <head>
 <title>ABC Bank Ltd</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 * {
 	margin: 0;
@@ -124,18 +125,18 @@ header {
  <header>
     <div class="wrapper">
         <div class="logo">
-            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+            <img src="resources/images/fd928888-0747-4a94-b438-499c871d6cdb_200x200.png" alt="">
         </div>
 <ul class="nav-area">
 <li><a href="showform">Submit your application</a></li>
 <li><a href="view">View Your application</a></li>
-<li><a href="#">Services</a></li>
+
 </ul>
 </div>
 <div class="welcome-text">
         <h1>
 Get your<br> <span>Loan Approved Today!</span></h1>
-<a href="#">Contact US</a>
+<a href="https://www.fico.com">Contact US</a>
     </div>
 </header>
 </body>
