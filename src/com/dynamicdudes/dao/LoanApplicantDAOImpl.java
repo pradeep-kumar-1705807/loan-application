@@ -56,7 +56,7 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	}
 
 	@Override
-	public LoanApplicant getLoanApplicantById(int applicationId) {
+	public LoanApplicant getLoanApplicantById(Integer applicationId) {
 		
        Session currentSession ;
        try {
@@ -71,10 +71,11 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 	}
 
 	@Override
-	public LoanApplicant isSsnAlreadyPresent(Long ssn) {
+	public LoanApplicant isSsnAlreadyPresent(Long ssnNumber) {
 		
 		
 		LoanApplicant loanApplicant = null;
+		String ssn = ssnNumber.toString();
 		Query<LoanApplicant> query;
 		
 		Session currentSession;
@@ -98,6 +99,7 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			
 		}
 		
 		

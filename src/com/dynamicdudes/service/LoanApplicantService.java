@@ -10,7 +10,7 @@ public interface LoanApplicantService {
 	
 	public List<LoanApplicant> getLoanApplicants();
 	
-	public LoanApplicant getLoanApplicantById(int applicationId);
+	public LoanApplicant getLoanApplicantById(Integer applicationId);
 	
 	public boolean isUniqueSSN(Long ssn);
 	

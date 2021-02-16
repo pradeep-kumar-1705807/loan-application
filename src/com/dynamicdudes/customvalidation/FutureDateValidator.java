@@ -10,12 +10,26 @@ public class FutureDateValidator implements ConstraintValidator<FutureDate, Stri
 
 	@Override
 	public boolean isValid(String date, ConstraintValidatorContext arg1) {
+		
+		LocalDate givenDate ;
+		LocalDate currentDate ; 
+		
+
 		if (date == null) {
 			return false;
 		}
-		LocalDate d1 = LocalDate.parse(date);
-		LocalDate d2 = LocalDate.now();
-		if (d1.isAfter(d2)) {
+		try {
+			givenDate = LocalDate.parse(date);
+			currentDate = LocalDate.now();
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+		if ( givenDate.isAfter(currentDate) ) 
+		{
+			
 			return false;
 		}
 

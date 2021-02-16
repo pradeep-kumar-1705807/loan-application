@@ -8,7 +8,7 @@ public interface LoanApplicantDAO {
 	
 	public void saveLoanApplicant(LoanApplicant loanApplicant);
 	public List<LoanApplicant> getLoanApplicants();
-	public LoanApplicant getLoanApplicantById(int applicationIdd);
+	public LoanApplicant getLoanApplicantById(Integer applicationIdd);
 	public  LoanApplicant isSsnAlreadyPresent(Long ssn);
 	
 
