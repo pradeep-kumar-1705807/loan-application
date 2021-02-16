@@ -7,9 +7,13 @@ import com.dynamicdudes.model.LoanApplicant;
 public interface LoanApplicantDAO {
 	
 	public void saveLoanApplicant(LoanApplicant loanApplicant);
+	
 	public List<LoanApplicant> getLoanApplicants();
-	public LoanApplicant getLoanApplicantById(Integer applicationIdd);
+	
+	public LoanApplicant getLoanApplicantById(Integer applicationId);
+	
 	public  LoanApplicant isSsnAlreadyPresent(Long ssn);
+	
 	
 
 }

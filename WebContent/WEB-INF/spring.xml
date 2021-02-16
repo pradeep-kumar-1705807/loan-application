@@ -54,8 +54,8 @@
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/loan?useSSL=false&amp;serverTimezone=UTC" />
-        <property name="user" value="loanapplicant" />
-        <property name="password" value="loan" /> 
+        <property name="user" value="root" />
+        <property name="password" value="QWERty12!@" /> 
 
         <!-- these are connection pool properties for C3P0 -->
 		<property name="initialPoolSize" value="5"/>
