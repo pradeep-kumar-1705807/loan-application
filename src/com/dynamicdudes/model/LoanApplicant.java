@@ -35,7 +35,7 @@ public class LoanApplicant {
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
 	@Column(name = "first_name")
-	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabets")
 	private String firstName;
 
 	@Size(max = 255, message = "255 character limit")
@@ -45,7 +45,7 @@ public class LoanApplicant {
 
 	@NotNull(message = "is Required")
 	@Size(max = 255, message = "255 character limit")
-	@Pattern(regexp="^[a-zA-Z]*$",message="must only be alphabets")
+	@Pattern(regexp="^[a-zA-Z ]*$",message="must only be alphabets")
 	@Column(name = "last_name")
 	private String lastName;
 
@@ -126,10 +126,10 @@ public class LoanApplicant {
 	private String employeeState;
 
 	@NotNull(message = "is Required")
-	@Min(0)
+	@Pattern(regexp="^[0-9]{5}$",message="must be a valid 5-digit")
+	@CustomSsn(message="must be unique")
 	@Column(name = "ssn")
-	@CustomSsn
-	private Long ssnNumber;
+	private String ssnNumber;
 
 	@NotNull(message = "is Required")
 	@Pattern(regexp="^[0-9]{10}$",message="must only be numeric and 10-digit value")
@@ -354,11 +354,11 @@ public class LoanApplicant {
 		this.employeeState = employeeState;
 	}
 
-	public Long getSsnNumber() {
+	public String getSsnNumber() {
 		return ssnNumber;
 	}
 
-	public void setSsnNumber(Long ssnNumber) {
+	public void setSsnNumber(String ssnNumber) {
 		this.ssnNumber = ssnNumber;
 	}
 

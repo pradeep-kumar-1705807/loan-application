@@ -1,3 +1,4 @@
+  
 package com.dynamicdudes.test;
 
 
@@ -12,12 +13,7 @@ import java.util.Scanner;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.dynamicdudes.dao.LoanApplicantDAO;
 import com.dynamicdudes.dao.LoanApplicantDAOImpl;
@@ -27,6 +23,7 @@ import com.dynamicdudes.model.LoanApplicant;
 
  
 class LoanApplicantDAOTest {
+	
 	ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("file:WebContent/WEB-INF/spring.xml");;
 	LoanApplicantDAO loanApplicantDAO = (LoanApplicantDAO) context.getBean("loanApplicantDAOImpl",LoanApplicantDAOImpl.class);
 	
@@ -37,22 +34,41 @@ class LoanApplicantDAOTest {
 	@Test
 	void testUniqueSsnNumber()  {
 	
+		boolean result1 =  false;
+		boolean result2 =  false;
 		
 		if(loanApplicantDAO != null)
 		{
+			
 			assertNotNull( loanApplicantDAO.isSsnAlreadyPresent(12765L) );
 			assertNotNull( loanApplicantDAO.isSsnAlreadyPresent(127659L) );
 			assertNotNull( loanApplicantDAO.isSsnAlreadyPresent(127659L) );
 			
+			try
+			{
+				loanApplicantDAO.isSsnAlreadyPresent(Long.parseLong(""));
+			}
+			catch(Exception e)
+			{
+				result1 = true;
+			}
+			try
+			{
+				loanApplicantDAO.isSsnAlreadyPresent(Long.parseLong("abcde") );
+			}
+			catch(Exception e)
+			{
+				result2 = true;
+			}
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(237659L) );
-		//	assertNull( loanApplicantDAO.isSsnAlreadyPresent(Long.parseLong("")) );
-			assertNull( loanApplicantDAO.isSsnAlreadyPresent(null) );
+		
 			
 			
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(-927659L) );
 			assertNull( loanApplicantDAO.isSsnAlreadyPresent(-157659L) );
 			
-			//assertNotNull( loanApplicantDAO.getLoanApplicantById(12) );
+			assertTrue(result1);
+			assertTrue(result2);
 			
 			
 		}
@@ -66,7 +82,7 @@ class LoanApplicantDAOTest {
 		
 		assertNull( loanApplicantDAO.getLoanApplicantById(12) );
 		//assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt(null)) );
-		assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt("")) );
+		//assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt("")) );
 		
 		
 		assertNotNull( loanApplicantDAO.getLoanApplicantById(14) );
