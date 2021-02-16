@@ -94,9 +94,10 @@ public class HomeController {
 			BindingResult theBindingResult)
 	{
 		
-		System.out.println(loanApplicant.getFirstName());
+		//System.out.println(loanApplicant.getFirstName());
 		if(theBindingResult.hasErrors())
 		{
+			
 			return "new-form";
 		}
 		else 

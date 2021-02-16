@@ -27,6 +27,12 @@
  
    <bean id="loanApplicantDAOImpl" class="com.dynamicdudes.dao.LoanApplicantDAOImpl">
     </bean>
+    
+    <bean id="loanApplicantServiceImpl" class="com.dynamicdudes.service.LoanApplicantServiceImpl">
+    </bean>
+    
+    <bean id="loanApplicant" class="com.dynamicdudes.model.LoanApplicant">
+    </bean>
  
 <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

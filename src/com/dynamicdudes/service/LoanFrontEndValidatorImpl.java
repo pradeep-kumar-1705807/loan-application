@@ -19,8 +19,14 @@ public class LoanFrontEndValidatorImpl implements LoanFrontEndValidator {
 	
 
 	public boolean checkExperience(LoanApplicant loanApplicant) {
-
-		if (loanApplicant.getYears() == 0 && loanApplicant.getMonths() < 6) {
+		Integer months = Integer.parseInt(loanApplicant.getMonths());
+		Integer years = Integer.parseInt(loanApplicant.getYears());
+		
+		if(months == null || years == null)
+		{
+			return false;
+		}
+		if (years == 0 && months < 6) {
 			return false;
 		}
 
@@ -29,8 +35,9 @@ public class LoanFrontEndValidatorImpl implements LoanFrontEndValidator {
 	}
 
 	public boolean checkSalary(LoanApplicant loanApplicant) {
+		Double annualSalary = Double.parseDouble(loanApplicant.getAnnualSal() );
 
-		if (loanApplicant.getAnnualSal() < 10000) {
+		if (annualSalary < 10000) {
 			return false;
 		}
 		return true;

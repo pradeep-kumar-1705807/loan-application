@@ -9,20 +9,30 @@ import com.dynamicdudes.service.LoanApplicantService;
 import com.dynamicdudes.service.LoanApplicantServiceImpl;
 
 
-public class CustomSsnConstraintValidator implements ConstraintValidator<CustomSsn,Long> {
+public class CustomSsnConstraintValidator implements ConstraintValidator<CustomSsn,String> {
 	@Autowired
 	private LoanApplicantService loanApplicantService;
 	
 
 	@Override
-	public boolean isValid(Long ssn, ConstraintValidatorContext arg1) {
+	public boolean isValid(String ssn, ConstraintValidatorContext arg1) {
 		
-		//LoanApplicantService loanApplicantService = new LoanApplicantServiceImpl();
+		Long ssnNumber = null;
+		try {
+			
+		 ssnNumber = Long.parseLong(ssn);
+		 
 		
+		}
+		catch(Exception e)
+		{
+			
+			return false;
+		}
 		if(loanApplicantService != null)
 		{
 			
-			if( loanApplicantService.isUniqueSSN(ssn) == false)
+			if( loanApplicantService.isUniqueSSN(ssnNumber) == false)
 			{
 				
 				return false;

@@ -17,7 +17,7 @@ public @interface CustomSsn {
 	
 	//define default course code
 	
-		public long value() default 1;
+		public String value() default "";
 		
 		//define default error message
 		

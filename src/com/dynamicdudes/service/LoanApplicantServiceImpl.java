@@ -44,7 +44,7 @@ public class LoanApplicantServiceImpl implements LoanApplicantService
 
 	@Override
 	@Transactional
-	public LoanApplicant getLoanApplicantById(int applicationId) {
+	public LoanApplicant getLoanApplicantById(Integer applicationId) {
 		
 		 return loanApplicantDAO.getLoanApplicantById(applicationId);	
 	}
