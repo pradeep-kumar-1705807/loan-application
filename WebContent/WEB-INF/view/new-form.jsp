@@ -22,7 +22,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                   <label class="label">first name</label>
+                                   <label class="label">first name<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="firstName" />
                                           <form:errors path="firstName" cssClass="error" /> 
                                 </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Last name</label>
+                                    <label class="label">Last name<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="lastName" />
                                      <form:errors path="lastName" cssClass="error" /> 
                                 </div>
@@ -45,13 +45,13 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Date of birth</label>
+                                    <label class="label">Date of birth <sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4 js-datepicker" type = "date" path="dob"/>
                                            <form:errors path="dob" cssClass="error" /> </div>
                                     </div>
                                 </div>
                                 <div class="input-group">
-                            <label class="label">Marital Status</label>
+                            <label class="label">Marital Status <sup style="color: red;">*</sup></label>
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <form:select path="maritalStatus">
                                   <form:option value="Single" label="Single" />
@@ -68,20 +68,20 @@
                                  <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">SSN Number</label>
+                                    <label class="label">SSN Number <sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="ssnNumber"/>
                                            <form:errors path="ssnNumber" cssClass="error" />  </div>
                                     </div>
                                 
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Loan Amount</label>
+                                    <label class="label">Loan Amount <sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="loanAmt"/>
                                              <form:errors path="loanAmt" cssClass="error" />  </div>
                                     </div>
                                 </div>
                                 <div class="input-group">
-                            <label class="label">Loan Purpose</label>
+                            <label class="label">Loan Purpose <sup style="color: red;">*</sup></label>
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <form:select path="loanPurpose">
                                   <form:option value="Debt" label="Debt"/>
@@ -96,7 +96,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Description</label>
+                                    <label class="label">Description <sup style="color: red;">*</sup></label>
                                     <form:textarea class="input--style-5" path="desc" rows="7" cols="70"></form:textarea>
                                      </div>
                                     </div>
@@ -105,7 +105,7 @@
                                <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Address 1</label>
+                                    <label class="label">Address 1<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="addrOne" /> 
 	                                     <form:errors path="addrOne" cssClass="error" />  </div>
                                     </div>
@@ -120,14 +120,14 @@
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">City</label>
+                                    <label class="label">City<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="city"/>
                                              <form:errors path="city" cssClass="error" />  </div>
                                     </div>
                                
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">State</label>
+                                    <label class="label">State<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="state"/>
                                              <form:errors path="state" cssClass="error" />  </div>
                                     </div>
@@ -135,7 +135,7 @@
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Postal Code</label>
+                                    <label class="label">Postal Code<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="postalcode"/>
                                              <form:errors path="postalcode" cssClass="error" />  </div>
                                     </div>
@@ -144,14 +144,14 @@
                                <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Home Phone</label>
+                                    <label class="label">Home Phone<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="homePhone" />
                                              <form:errors path="homePhone" cssClass="error" />  </div>
                                     </div>
                                 
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Mobile Phone</label>
+                                    <label class="label">Mobile Phone<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="mobile"/>
                                              <form:errors path="mobile" cssClass="error" />  </div>
                                     </div>
@@ -166,7 +166,7 @@
                                
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Email</label>
+                                    <label class="label">Email<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="email"/>
                                              <form:errors path="email" cssClass="error" />  </div>
                                     </div>
@@ -175,14 +175,14 @@
                                <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Employee Name</label>
+                                    <label class="label">Employee Name<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="Name" path="employeeName" />
                                              <form:errors path="employeeName" cssClass="error" />  </div>
                                     </div>
                               
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Annual Salary</label>
+                                    <label class="label">Annual Salary<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="annualSal"/>
                                              <form:errors path="annualSal" cssClass="error" />  </div>
                                     </div>
@@ -190,7 +190,7 @@
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Address 1</label>
+                                    <label class="label">Address 1<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="employeeAddressOne" /> 
 	                                     <form:errors path="employeeAddressOne" cssClass="error" />  </div>
                                     </div>
@@ -204,14 +204,14 @@
                                
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">City</label>
+                                    <label class="label">City<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="employeeCity"/>
                                              <form:errors path="employeeCity" cssClass="error" />  </div>
                                     </div>
                                 
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">State</label>
+                                    <label class="label">State<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="employeeState"/>
                                              <form:errors path="employeeState" cssClass="error" />  </div>
                                     </div>
@@ -219,14 +219,14 @@
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Postal Code</label>
+                                    <label class="label">Postal Code<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="employeePostalcode"/>
                                              <form:errors path="employeePostalcode" cssClass="error" />  </div>
                                     </div>
                                 
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Desgination</label>
+                                    <label class="label">Desgination<sup style="color: red;">*</sup></label>
                                     <form:input class="input--style-4" placeholder="" path="designation"/>
                                             <form:errors path="designation" cssClass="error" />  </div>
                                     </div>
@@ -234,7 +234,7 @@
                                 <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Experience Year</label>
+                                    <label class="label">Experience Year<sup style="color: red;">*</sup></label>
                                     
                                     <form:input class="input--style-4" placeholder="" path="years" />
                                     <form:errors path="years" cssClass="error" /> 
@@ -243,7 +243,7 @@
                                     
                                     <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Month</label>
+                                    <label class="label">Month<sup style="color: red;">*</sup></label>
                                     
                                     <form:input class="input--style-4" placeholder="" path="months" />
                                     <form:errors path="months" cssClass="error" />   </div>
