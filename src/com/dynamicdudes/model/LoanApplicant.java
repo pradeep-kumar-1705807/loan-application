@@ -161,7 +161,7 @@ public class LoanApplicant {
 
 	
 	@Column(name = "experience_months")
-	@Pattern(regexp="^(0?[1-9]|1[012])$",message="must be a valid month")
+	@Pattern(regexp="^(0?[0-9]|1[01])$",message="must be a valid month")
 	private String months;
 
 	@NotNull(message = "is Required")
@@ -171,12 +171,12 @@ public class LoanApplicant {
 
 	@NotNull(message = "is Required")
 	@Column(name = "loan_amount")
-	@Pattern(regexp="^[+-]?([0-9]*[.])?[0-9]+$",message="enter valid loan amount")
+	@Pattern(regexp="^([0-9]*[.])?[0-9]+$",message="enter valid loan amount")
 	private String loanAmt;
 
 	@NotNull(message = "is Required")
 	@Column(name = "annual_salary")
-	@Pattern(regexp="^[+-]?([0-9]*[.])?[0-9]+$",message="enter valid salary ")
+	@Pattern(regexp="^([0-9]*[.])?[0-9]+$",message="enter valid salary ")
 	private String annualSal;
 
 	@Column(name = "score")

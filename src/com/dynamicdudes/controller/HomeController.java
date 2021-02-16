@@ -45,17 +45,20 @@ public class HomeController {
 		
 	}
 	
-//	@RequestMapping("/testing")
-//	public void testingPurpose()
-//	{
-//		System.out.println(loanApplicantService.isUniqueSSN(100010L));
-//	}
 	
 	@RequestMapping("/")
 	public String showPage()
 	{
 		return "Home";
 	}
+	
+//	@RequestMapping("/search")
+//	public String search(String theSearchText, Model theModel)
+//	{
+//		
+//		
+//		return "view-searched-applicants";
+//	}
 	
 	@RequestMapping("/showform")
 	public String showNewForm(Model model)
@@ -94,7 +97,6 @@ public class HomeController {
 			BindingResult theBindingResult)
 	{
 		
-		//System.out.println(loanApplicant.getFirstName());
 		if(theBindingResult.hasErrors())
 		{
 			
