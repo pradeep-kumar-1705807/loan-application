@@ -37,13 +37,13 @@ tr:nth-child(even) {
            <h2>Loan Applicant</h2>
            </div>
      </div>
-   <!--   <form:form action="search" method="GET">
+     <!-- <form:form action="search" method="GET">
                 Search Loan Applicant: <input type="text" name="theSearchName" />
                 
                 <input type="submit" value="Search" class="add-button" />
      </form:form>
-     <br><br>
-     --> 
+     <br><br> -->
+     
      
      
      <div style="overflow-x:auto;" id="content">
