@@ -106,4 +106,39 @@ public class LoanApplicantDAOImpl implements LoanApplicantDAO {
 		return loanApplicant;
 	}
 
+	@Override
+	public List<LoanApplicant> searchLoanApplicants(String theSearchText) {
+		
+		Session currentSession ;
+		try {
+	   		currentSession =  sessionFactory.getCurrentSession();
+	   		}
+	   		catch (HibernateException mye) 
+	   		{
+	   			currentSession = sessionFactory.openSession();
+	   		}
+		
+		Query<LoanApplicant> query = null;
+		
+		
+		
+		
+		 if (theSearchText != null && theSearchText.trim().length() > 0) {
+
+	            // search for firstName or lastName ... case insensitive
+	            query = currentSession.createQuery("from LoanApplicant where lower(firstName) like :theName or lower(lastName) like :theName", 
+	            		LoanApplicant.class);
+	            query.setParameter("theName", "%" + theSearchText.toLowerCase() + "%");
+
+	        }
+	        else {
+	            // theSearchName is empty ... so just get all LoanApplicant
+	            query =currentSession.createQuery("from LoanApplicant", LoanApplicant.class);            
+	        }
+		
+		return query.getResultList();
+		
+		
+	}
+
 }
