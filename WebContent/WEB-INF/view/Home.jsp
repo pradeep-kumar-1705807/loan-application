@@ -60,6 +60,7 @@ header {
 	height: 300px;
 	margin: 20% 30%;
 	text-align: center;
+	
 }
 .welcome-text h1 {
 	text-align: center;

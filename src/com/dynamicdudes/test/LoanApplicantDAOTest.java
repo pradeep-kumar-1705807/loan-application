@@ -86,7 +86,7 @@ class LoanApplicantDAOTest {
 		//assertNull( loanApplicantDAO.getLoanApplicantById(Integer.parseInt("")) );
 		
 		
-		assertNotNull( loanApplicantDAO.getLoanApplicantById(14) );
+		assertNull( loanApplicantDAO.getLoanApplicantById(14) );
 		assertNotNull( loanApplicantDAO.getLoanApplicantById(15) );
 		assertNotNull( loanApplicantDAO.getLoanApplicantById(80) );
 	}
@@ -95,7 +95,11 @@ class LoanApplicantDAOTest {
 	void testGetApplicants()
 	{
 		
-		List<LoanApplicant>  loanApplicants = loanApplicantDAO.getLoanApplicants();
+		List<LoanApplicant>  loanApplicants = loanApplicantDAO.searchLoanApplicants("Pradeep");
+		for(LoanApplicant loanApplicant : loanApplicants)
+		{
+			System.out.println(loanApplicant.toString());
+		}
 		assertNotNull( loanApplicants );
 		
 		

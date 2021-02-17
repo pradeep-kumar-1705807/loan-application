@@ -13,6 +13,8 @@ public interface LoanApplicantDAO {
 	public LoanApplicant getLoanApplicantById(Integer applicationId);
 	
 	public  LoanApplicant isSsnAlreadyPresent(Long ssn);
+
+	public List<LoanApplicant> searchLoanApplicants(String theSearchtext);
 	
 	
 

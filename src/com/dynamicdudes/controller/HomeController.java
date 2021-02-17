@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,7 @@ public class HomeController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
+		
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 		
@@ -52,13 +54,16 @@ public class HomeController {
 		return "Home";
 	}
 	
-//	@RequestMapping("/search")
-//	public String search(String theSearchText, Model theModel)
-//	{
-//		
-//		
-//		return "view-searched-applicants";
-//	}
+	@RequestMapping("/search")
+	public String search(@RequestParam(name="theSearchText",required=false) String theSearchText, Model theModel)
+	{
+		List<LoanApplicant> loanApplicants = loanApplicantService.searchLoanApplicants(theSearchText);
+		
+		theModel.addAttribute("loanApplicants",loanApplicants);
+		
+		
+		return "view-searched-applicants";
+	}
 	
 	@RequestMapping("/showform")
 	public String showNewForm(Model model)

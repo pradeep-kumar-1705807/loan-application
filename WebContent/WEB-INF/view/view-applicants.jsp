@@ -1,33 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link href="<c:url value="/resources/css/table.css" />" rel="stylesheet"/>
-<title>View Applicants</title>
+<title>Searched Applicants</title>
 <style>
 #header {
 	text-align: center;
 }
 
-/* table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
-	border: 1px solid #ddd;
-}
 
-th, td {
-	border: 1px solid black;
-	text-align: left;
-	padding: 16px;
-}
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
-} */
 </style>
 </head>
 <body>
@@ -38,12 +25,20 @@ tr:nth-child(even) {
 			<h2>Loan Applicant</h2>
 		</div>
 	</div>
-	<!-- <form:form action="search" method="GET">
-                Search Loan Applicant: <input type="text" name="theSearchName" />
-                
-                <input type="submit" value="Search" class="add-button" />
-     </form:form>
-     <br><br> -->
+	<div style="margin-left: 100px;">
+		<form:form action="search" method="GET">
+                Search Loan Applicant: <input type="text"
+				name="theSearchText" />
+
+			<input type="submit" value="Search" />
+			<a href="/loan-processing-system"><input type="button"
+				value="Home" /></a>
+		</form:form>
+
+		<br>
+	</div>
+
+
 
 
 
@@ -79,4 +74,5 @@ tr:nth-child(even) {
 	</div>
 
 </body>
+
 </html>

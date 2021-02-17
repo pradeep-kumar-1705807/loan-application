@@ -67,6 +67,15 @@ public class LoanApplicantServiceImpl implements LoanApplicantService
 		return true;
 	}
 
+
+
+	@Override
+	@Transactional
+	public List<LoanApplicant> searchLoanApplicants(String theSearchtext) {
+		
+		return loanApplicantDAO.searchLoanApplicants(theSearchtext);
+	}
+
 	
 
 }

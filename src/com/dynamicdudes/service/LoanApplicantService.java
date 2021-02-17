@@ -14,5 +14,9 @@ public interface LoanApplicantService {
 	
 	public boolean isUniqueSSN(Long ssn);
 	
+	public List<LoanApplicant> searchLoanApplicants(String theSearchtext);
+	
+	
+	
 
 }
